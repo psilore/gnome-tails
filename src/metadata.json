@@ -1,0 +1,7 @@
+{
+  "name": "Tailscale Control",
+  "description": "Quick drop-down status and toggle for Tailscale",
+  "uuid": "tailscale-control@local",
+  "shell-version": ["47", "48", "49"],
+  "version": 1
+}
