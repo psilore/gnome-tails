@@ -1,0 +1,31 @@
+{
+  "branches": ["main"],
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "jq --arg v \"${nextRelease.version}\" '.version = $v' src/metadata.json > src/metadata.json.tmp && mv src/metadata.json.tmp src/metadata.json && make pack"
+      }
+    ],
+    [
+      "@semantic-release/git",
+      {
+        "assets": ["src/metadata.json"],
+        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+      }
+    ],
+    [
+      "@semantic-release/github",
+      {
+        "assets": [
+          {
+            "path": "*.shell-extension.zip",
+            "label": "GNOME Shell Extension (${nextRelease.version})"
+          }
+        ]
+      }
+    ]
+  ]
+}
