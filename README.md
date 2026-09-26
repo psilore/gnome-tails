@@ -8,6 +8,10 @@ Tested and built for **GNOME Shell 47–49** on **Debian 13 (Trixie)**.
 
 ## Features
 
+<p align="center">
+  <img src="docs/images/screenshot.png" alt="GNOME Tails Screenshot" width="380">
+</p>
+
 - **Top Bar Indicator:** Displays Tailscale status using an SVG panel icon.
 - **Connection Toggle:** Quick switch to run `tailscale up` and `tailscale down`.
 - **IP & State Display:** Shows current backend state and Tailscale IPv4 address.
